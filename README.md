@@ -11,14 +11,14 @@ are MATLAB “p-code” files in which the inner workings are obscured, such tha
 functions. Note that all of these functions assume zero initial conditions, i.e., x[n] = 0 and y[n] = 0 for all
 values of n before the first time-step value in your supplied input array n, and that x[n] = 0 for all values
 of n after the last time-step value in your input provided array n.
-Download these files, and develop M ATLAB scripts (i.e., .m files) that demonstrate whether each of
+Download these files, and develop MATLAB scripts (i.e., .m files) that demonstrate whether each of
 these systems 1–3 is:
-I. Causal or Non-causal
-II. Linear or Non-linear, where linearity includes both:
-a. “Homogeneity” (i.e., linear scaling over all scales of input signal amplitude), and
-b. “Additivity” (i.e., linear superposition)
-III. Time-invariant or Time-varying, and
-IV. Has Memory or is Memoryless.
+  I. Causal or Non-causal
+  II. Linear or Non-linear, where linearity includes both:
+    a. “Homogeneity” (i.e., linear scaling over all scales of input signal amplitude), and
+    b. “Additivity” (i.e., linear superposition)
+  III. Time-invariant or Time-varying, and
+  IV. Has Memory or is Memoryless.
 In your report, clearly describe each of these three systems: i) your methodology for testing each of the
 Properties listed above, and ii) your reasoning for why you think that system has that particular property,
 e.g., what signal(s) you put into the system to determine whether it is causal or non-causal, and how you
