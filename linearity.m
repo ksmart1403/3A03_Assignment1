@@ -14,30 +14,34 @@ a = rand;
 ya = system(n, x1);
 yb = system(n, x2);
 
-yref1 = a*ya + a*yb;  % our 'should be' value if the function from the system is actually homogenous
+yref1 = a*ya + a*yb; % our 'should be' value if the function from the system is actually homogenous
 xtest1 = a*x1 + a*x2;
 ytest1 = system(n, xtest1);
 
+additivity = true;
 if yref == ytest
     f = fprintf('This system is additive.\n');
 else
     f = fprintf('This system is not additive.\n');
+    additivity = false;
 end
 
-if yref1 == ytest1
+homogenous = true;
+if round(yref1,4) == round(ytest1,4)
     f1 = fprintf('This system is homogenous.\n');
 else
     f1 = fprintf('This system is not homogenous.\n');
+    homogenous = false;
+
 end
 
-if yref == ytest
-    if yref1 == ytest1
-        f2 = fprintf('Therefore, this system is linear.\n\n');
-    else
-        f2 = fprintf('Therefore, this system is not linear.\n\n');
-    end
+if additivity == false | homogenous == false
+    f2 = fprintf('Therefore, this system is not linear.\n\n');
+else
+    f2 = fprintf('Therefore, this system is linear.\n\n');
 end
 
+% graphing outputs with stem plots
 figure
 hold on
 stem(n,yref)

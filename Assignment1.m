@@ -8,10 +8,36 @@ clear
 close all
 
 fprintf('SYSTEM 1:\n\n');
-[f, f1, f2] = linearity(@system1, -2:2, [0 0 1 0 0], [1 0 0 0 0]);
-[g] = causality(@system1, -2:2, [0 0 0 0 1]);
-[h] = timeinvarience(@system1, -4:4, [0 0 1 0 0 0 0 0 0],5);
-[k] = mymemory(@system1, -3:3, [0 0 1 0 0 0 0]);
+system = @system1;
+
+% linearity - normal impulse
+[f, f1, f2] = linearity(system, -2:2, [0 0 5 0 0], [1 0 0 0 0]);
+
+% linearity - unit step
+[f3, f4, f5] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
+
+
+% causality - normal impulse
+[g1] = causality(system, -2:2, [0 0 1 0 0]);
+% causality - scaled impulse 
+[g2] = causality(system, -2:2, [0 0 1 0 0]);
+% causality - unit step
+[g3] = causality(system, -2:2, [0 0 1 1 1]);
+
+% time invarience - right shift 
+[h1] = timeinvarience(system, -4:4, [0 0 1 0 0 0 0 0 0],5);
+% time invarience - left shift and step function
+[h2] = timeinvarience(system, -4:4, [0 0 1 1 1 0 0 0 0],-5);
+
+% memory - normal impulse
+[i1] = mymemory(system, -3:3, [0 0 1 0 0 0 0]);
+
+% memory - scaled impulse
+[i2] = mymemory(system, -3:3, [0 0 5 0 0 0 0]);
+
+% memory - step function 
+[i3] = mymemory(system, -3:3, [0 0 1 1 1 0 0]);
+
 
 %% System 2
 clc
@@ -19,10 +45,36 @@ clear
 close all
 
 fprintf('SYSTEM 2:\n\n');
-[f, f1, f2] = linearity(@system2, -2:2, [0 0 0 0 1], [1 0 0 0 0]);
-[g] = causality(@system2, -2:2, [0 1 0 0 0]);
-[h] = timeinvarience(@system2, -4:4, [1 0 0 0 0 0 0 0 0],5);
-[k] = mymemory(@system2, -3:3, [0 1 0 0 0 0 0]);
+system = @system2;
+
+% linearity - normal impulse
+[f, f1, f2] = linearity(system, -2:2, [0 0 5 0 0], [1 0 0 0 0]);
+
+% linearity - unit step
+[f3, f4, f5] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
+
+
+% causality - normal impulse
+[g1] = causality(system, -2:2, [0 0 1 0 0]);
+% causality - scaled impulse 
+[g2] = causality(system, -2:2, [0 0 1 0 0]);
+% causality - unit step
+[g3] = causality(system, -2:2, [0 0 1 1 1]);
+
+% time invarience - right shift 
+[h1] = timeinvarience(system, -4:4, [0 0 1 0 0 0 0 0 0],5);
+% time invarience - left shift and step function
+[h2] = timeinvarience(system, -4:4, [0 0 1 1 1 0 0 0 0],-5);
+
+% memory - normal impulse
+[i1] = mymemory(system, -3:3, [0 0 1 0 0 0 0]);
+
+% memory - scaled impulse
+[i2] = mymemory(system, -3:3, [0 0 5 0 0 0 0]);
+
+% memory - step function 
+[i3] = mymemory(system, -3:3, [0 0 1 1 1 0 0]);
+
 
 %% System 3
 clc
@@ -30,7 +82,33 @@ clear
 close all
 
 fprintf('SYSTEM 3:\n\n');
-[f, f1, f2] = linearity(@system3, -2:2, [0 0 1 0 0], [1 0 0 0 0]);
-[g] = causality(@system3, -2:2, [0 0 0 0 1]);
-[h] = timeinvarience(@system3, -4:4, [0 0 1 0 0 0 0 0 0],5);
-[k] = mymemory(@system3, -3:3, [0 0 1 0 0 0 0]);
+system = @system3;
+
+% linearity - normal impulse
+[f, f1, f2] = linearity(system, -2:2, [0 0 5 0 0], [1 0 0 0 0]);
+
+% linearity - unit step
+[f3, f4, f5] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
+
+
+% causality - normal impulse
+[g1] = causality(system, -2:2, [0 0 1 0 0]);
+% causality - scaled impulse 
+[g2] = causality(system, -2:2, [0 0 1 0 0]);
+% causality - unit step
+[g3] = causality(system, -2:2, [0 0 1 1 1]);
+
+% time invarience - right shift 
+[h1] = timeinvarience(system, -4:4, [0 0 1 0 0 0 0 0 0],5);
+% time invarience - left shift and step function
+[h2] = timeinvarience(system, -4:4, [0 0 1 1 1 0 0 0 0],-5);
+
+% memory - normal impulse
+[i1] = mymemory(system, -3:3, [0 0 1 0 0 0 0]);
+
+% memory - scaled impulse
+[i2] = mymemory(system, -3:3, [0 0 5 0 0 0 0]);
+
+% memory - step function 
+[i3] = mymemory(system, -3:3, [0 0 1 1 1 0 0]);
+
