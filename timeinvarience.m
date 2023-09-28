@@ -1,4 +1,4 @@
-function [f] = timeinvarience(system, n, x1)
+function [f] = timeinvarience(system, n, x1, shift)
 
 arraylength = length(n);
 
@@ -7,7 +7,7 @@ y1 = system(n,x1);
 
 % shifting n values 
 for i = 1:arraylength
-    n(i)= n(i)+5;
+    n(i)= n(i)+shift;
 end 
 
 % second output using shifted n values
@@ -34,7 +34,7 @@ end
 figure
 hold on
 stem(n,y1)
-stem(n+5,y2)
+stem(n+shift,y2)
 title('Time-Invariance Representation')
 xlabel('n')
 ylabel('f[system]')
