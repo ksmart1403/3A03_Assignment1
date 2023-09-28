@@ -13,7 +13,7 @@ values of n before the first time-step value in your supplied input array n, and
 of n after the last time-step value in your input provided array n.
 Download these files, and develop MATLAB scripts (i.e., .m files) that demonstrate whether each of
 these systems 1–3 is:
-  I. Causal or Non-causal
+  \tI. Causal or Non-causal
   II. Linear or Non-linear, where linearity includes both:
     a. “Homogeneity” (i.e., linear scaling over all scales of input signal amplitude), and
     b. “Additivity” (i.e., linear superposition)
