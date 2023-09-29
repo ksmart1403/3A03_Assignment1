@@ -19,7 +19,7 @@ xtest1 = a*x1 + a*x2;
 ytest1 = system(n, xtest1);
 
 additivity = true;
-if yref == ytest
+if round(yref,4) == round(ytest,4)
     f = fprintf('This system is additive.\n');
 else
     f = fprintf('This system is not additive.\n');

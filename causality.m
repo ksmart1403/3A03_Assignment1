@@ -5,7 +5,8 @@ arraylength = length(n);
 % checking at what index non-zero values occur at and storing it 
 for i = 1:arraylength
     if x1(i) ~=0
-        nonzero = n(i); 
+        nonzero = n(i);
+        break
     end
 end 
 

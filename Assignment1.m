@@ -10,11 +10,11 @@ close all
 fprintf('SYSTEM 1:\n\n');
 system = @system1;
 
-% linearity - normal impulse
-[f, f1, f2] = linearity(system, -2:2, [0 0 5 0 0], [1 0 0 0 0]);
+% linearity - normal unit step
+[f, f1, f2] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
 
-% linearity - unit step
-[f3, f4, f5] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
+% linearity - scaled unit step
+[f3, f4, f5] = linearity(system, -2:2, [0 5 5 5 0], [0 -3 -3 -3 0]);
 
 
 % causality - normal impulse
@@ -47,11 +47,11 @@ close all
 fprintf('SYSTEM 2:\n\n');
 system = @system2;
 
-% linearity - normal impulse
-[f, f1, f2] = linearity(system, -2:2, [0 0 5 0 0], [1 0 0 0 0]);
+% linearity - normal unit step
+[f, f1, f2] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
 
-% linearity - unit step
-[f3, f4, f5] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
+% linearity - scaled unit step
+[f3, f4, f5] = linearity(system, -2:2, [0 5 5 5 0], [0 -3 -3 -3 0]);
 
 
 % causality - normal impulse
@@ -84,11 +84,11 @@ close all
 fprintf('SYSTEM 3:\n\n');
 system = @system3;
 
-% linearity - normal impulse
-[f, f1, f2] = linearity(system, -2:2, [0 0 5 0 0], [1 0 0 0 0]);
+% linearity - normal unit step
+[f, f1, f2] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
 
-% linearity - unit step
-[f3, f4, f5] = linearity(system, -2:2, [0 1 1 1 0], [0 1 1 1 0]);
+% linearity - scaled unit step
+[f3, f4, f5] = linearity(system, -2:2, [0 5 5 5 0], [0 -3 -3 -3 0]);
 
 
 % causality - normal impulse
