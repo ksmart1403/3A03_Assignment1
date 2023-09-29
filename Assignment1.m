@@ -19,21 +19,20 @@ system = @system1;
 
 % causality - normal impulse
 [g1] = causality(system, -2:2, [0 0 1 0 0]);
-% causality - scaled impulse 
-[g2] = causality(system, -2:2, [0 0 1 0 0]);
+
 % causality - unit step
-[g3] = causality(system, -2:2, [0 0 1 1 1]);
+[g2] = causality(system, -2:2, [0 0 1 1 1]);
+
 
 % time invarience - right shift 
 [h1] = timeinvarience(system, -4:4, [0 0 1 0 0 0 0 0 0],5);
+
 % time invarience - left shift and step function
 [h2] = timeinvarience(system, -4:4, [0 0 1 1 1 0 0 0 0],-5);
 
+
 % memory - normal impulse
 [i1] = mymemory(system, -3:3, [0 0 1 0 0 0 0]);
-
-% memory - scaled impulse
-[i2] = mymemory(system, -3:3, [0 0 5 0 0 0 0]);
 
 % memory - step function 
 [i3] = mymemory(system, -3:3, [0 0 1 1 1 0 0]);
@@ -56,21 +55,20 @@ system = @system2;
 
 % causality - normal impulse
 [g1] = causality(system, -2:2, [0 0 1 0 0]);
-% causality - scaled impulse 
-[g2] = causality(system, -2:2, [0 0 1 0 0]);
+
 % causality - unit step
-[g3] = causality(system, -2:2, [0 0 1 1 1]);
+[g2] = causality(system, -2:2, [0 0 1 1 1]);
+
 
 % time invarience - right shift 
 [h1] = timeinvarience(system, -4:4, [0 0 1 0 0 0 0 0 0],5);
+
 % time invarience - left shift and step function
 [h2] = timeinvarience(system, -4:4, [0 0 1 1 1 0 0 0 0],-5);
 
+
 % memory - normal impulse
 [i1] = mymemory(system, -3:3, [0 0 1 0 0 0 0]);
-
-% memory - scaled impulse
-[i2] = mymemory(system, -3:3, [0 0 5 0 0 0 0]);
 
 % memory - step function 
 [i3] = mymemory(system, -3:3, [0 0 1 1 1 0 0]);
@@ -93,22 +91,20 @@ system = @system3;
 
 % causality - normal impulse
 [g1] = causality(system, -2:2, [0 0 1 0 0]);
-% causality - scaled impulse 
-[g2] = causality(system, -2:2, [0 0 1 0 0]);
+
 % causality - unit step
-[g3] = causality(system, -2:2, [0 0 1 1 1]);
+[g2] = causality(system, -2:2, [0 0 1 1 1]);
+
 
 % time invarience - right shift 
 [h1] = timeinvarience(system, -4:4, [0 0 1 0 0 0 0 0 0],5);
+
 % time invarience - left shift and step function
 [h2] = timeinvarience(system, -4:4, [0 0 1 1 1 0 0 0 0],-5);
+
 
 % memory - normal impulse
 [i1] = mymemory(system, -3:3, [0 0 1 0 0 0 0]);
 
-% memory - scaled impulse
-[i2] = mymemory(system, -3:3, [0 0 5 0 0 0 0]);
-
 % memory - step function 
 [i3] = mymemory(system, -3:3, [0 0 1 1 1 0 0]);
-

@@ -35,6 +35,6 @@ stem(n,y1)
 title('Causality Representation')
 xlabel('n')
 ylabel('f[system]')
-legend('Impulse', 'Function Output')
+legend('Function Input', 'Function Output')
 
 
